@@ -1,0 +1,138 @@
+<!-- terms.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartSlot Terms of Service</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .terms-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .toggle-btn {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background-color: #7C3AED;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    .tos-section {
+      display: none;
+      padding-top: 1rem;
+    }
+    .tos-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="terms-container">
+    <h1>SmartSlot Terms of Service</h1>
+
+    <div>
+      <button class="toggle-btn" onclick="toggleTOS('driver')">Driver Terms</button>
+      <button class="toggle-btn" onclick="toggleTOS('host')">Host Terms</button>
+    </div>
+
+    <div id="driver" class="tos-section active">
+      <!-- Paste full Driver Terms of Service here -->
+      <h2>Driver Terms of Service</h2>
+      <p><strong>Effective Date:</strong> July 27, 2025</p>
+       <h2>1. Scope of Service</h2>
+    <p>SmartSlot provides a digital platform enabling drivers to locate, book, and pay for parking spaces listed by registered hosts across various regions in the Philippines.</p>
+
+    <h2>2. Driver Eligibility</h2>
+    <p>By registering, you represent that you are at least 18 years old, possess a valid driver's license issued in the Philippines, and are legally authorized to operate a motor vehicle.</p>
+
+    <h2>3. Account Security</h2>
+    <p>You are responsible for safeguarding your login credentials. You agree to notify SmartSlot immediately of any unauthorized use of your account.</p>
+
+    <h2>4. Booking and Payment</h2>
+    <p>All bookings are made through the SmartSlot platform and are subject to applicable fees. Payments must be completed through our secure payment gateway. Rates may vary based on location, time, and demand.</p>
+
+    <h2>5. Cancellation and Refund Policy</h2>
+    <p>Drivers may cancel bookings based on the cancellation terms displayed during checkout. Refunds will be processed according to our platform refund guidelines. Certain bookings, including last-minute ones, may be non-refundable.</p>
+
+    <h2>6. Code of Conduct</h2>
+    <ul>
+      <li>Respect host properties and parking guidelines.</li>
+      <li>Do not damage, block, or misuse the parking area.</li>
+      <li>Exit the space promptly after the booking ends.</li>
+    </ul>
+
+    <h2>7. Nationwide Use</h2>
+    <p>SmartSlot operates in multiple cities and regions across the Philippines. Drivers are expected to comply with all local traffic, zoning, and parking regulations applicable in each location where services are accessed.</p>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>SmartSlot is not liable for any vehicle damage, theft, injury, or losses incurred at third-party properties. Drivers accept all risks associated with using a host's property and agree to release SmartSlot from related claims.</p>
+
+    <h2>9. Suspension and Termination</h2>
+    <p>We reserve the right to suspend or terminate your account for violation of these Terms, suspected fraud, or misuse of the platform.</p>
+
+    <h2>10. Updates to Terms</h2>
+    <p>SmartSlot may update these Terms at any time. Continued use of the service constitutes your acceptance of the revised Terms.</p>
+
+    <h2>11. Governing Law</h2>
+    <p>This Agreement is governed by the laws of the Republic of the Philippines. Disputes shall be resolved in the courts of Taguig City, Metro Manila, unless otherwise agreed in writing.</p>
+
+    <h2>12. Contact Information</h2>
+    <p>For legal inquiries, email us at <a href="mailto:legal@smartslot.ph">legal@smartslot.ph</a>.</p>
+    </div>
+
+    <div id="host" class="tos-section">
+      <!-- Paste full Host Terms of Service here -->
+      <h2>Host Terms of Service</h2>
+      <p><strong>Effective Date:</strong> July 27, 2025</p>
+      <h2>1. Eligibility</h2>
+    <p>You must be 18 or older and legally authorized to list a parking space. This includes owning the space or having permission to rent it out.</p>
+
+    <h2>2. Your Responsibilities as a Host</h2>
+    <ul>
+      <li>Provide accurate and complete listing information (location, price, availability, rules).</li>
+      <li>Ensure your space is clean, safe, and accessible for drivers.</li>
+      <li>Honor confirmed bookings and communicate with renters promptly.</li>
+      <li>Comply with all relevant property, zoning, and safety laws.</li>
+    </ul>
+
+    <h2>3. Payments and Fees</h2>
+    <p>You’ll be paid for bookings after deducting SmartSlot’s service fee. Payouts are processed through your linked payment method.</p>
+
+    <h2>4. Cancellations and Account Status</h2>
+    <p>Frequent cancellations or unresolved complaints may lead to penalties or suspension. Keep your listing accurate and updated.</p>
+
+    <h2>5. Liability and Insurance</h2>
+    <p>SmartSlot is not responsible for any damage, theft, or injuries on your property. We recommend securing your own insurance coverage.</p>
+
+    <h2>6. Content and Listings</h2>
+    <p>By listing, you grant SmartSlot the right to show your listing details on the platform. Don’t include misleading, false, or offensive content.</p>
+
+    <h2>7. Modifications</h2>
+    <p>We may update these Terms at any time. Continued use of the platform means you agree to the updated version.</p>
+
+    <h2>8. Governing Law</h2>
+    <p>This agreement is governed by Philippine law. Disputes will be handled by the courts in Quezon City, Metro Manila.</p>
+
+    <h2>9. Contact</h2>
+    <p>For questions or legal concerns, email us at <a href="mailto:legal.smartslot@gmail.com">legal.smartslot@gmail.com</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleTOS(section) {
+      document.querySelectorAll('.tos-section').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(section).classList.add('active');
+    }
+  </script>
+</body>
+</html>
