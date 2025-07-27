@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartSlot Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 480px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: #977fb0;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      justify-content: space-between;
+    }
+
+    .chat-header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #f9fafb;
+    }
+
+    .message-wrapper {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .message {
+      padding: 0.75rem 1rem;
+      border-radius: 1.25rem;
+      font-size: 0.95rem;
+      max-width: 75%;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .driver-message {
+      background-color: #EDE9FE;
+      margin-left: auto;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .host-message {
+      background-color: #fff;
+      border: 1px solid #e5e7eb;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .timestamp {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin: 0.25rem 0 0.5rem;
+      text-align: center;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #e5e7eb;
+      padding: 0.75rem 1rem;
+      background-color: white;
+    }
+
+    .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: 9999px;
+      background-color: #f3f4f6;
+    }
+
+    .chat-input button {
+      background-color: #ebc965;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      margin-left: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chat-input input:focus {
+      outline: none;
+    }
+
+    .chat-input button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">
+    <span>Ben Amber Pocaan (Host)</span>
+    <img src="Ben Amber Pocaan.jpg" alt="Host Avatar">
+  </div>
+
+  <div class="chat-messages">
+    <div class="timestamp">Today • 9:14 AM</div>
+    
+    <div class="message-wrapper">
+      <div class="message host-message">Hi! Just confirming your booking for tomorrow 10AM–1PM. See you then!</div>
+    </div>
+
+    <div class="message-wrapper">
+      <div class="message driver-message">Thank you! Can I arrive a little earlier if it's free?</div>
+    </div>
+
+    <div class="message-wrapper">
+      <div class="message host-message">Sure, I’ll make it available by 9:45AM. Just give me a heads-up if you’re coming early 😊</div>
+    </div>
+    
+    <div class="message-wrapper">
+      <div class="message driver-message">Awesome, thanks so much!</div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" placeholder="Type your message..." />
+    <button>Send</button>
+  </div>
+</div>
+
+</body>
+</html>
