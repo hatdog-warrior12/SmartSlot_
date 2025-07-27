@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartSlot – Park Smarter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo animate">SmartSlot</div>
+    <nav class="nav-dropdown">
+      <a href="#how">How It Works</a>
+      <a href="#benefits">Benefits</a>
+
+      <div class="dropdown">
+        <button class="btn-primary">Login ▾</button>
+        <div class="dropdown-content">
+          <a href="login-driver.html">As Driver</a>
+          <a href="login-host.html">As Host</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn-primary">Get Started ▾</button>
+        <div class="dropdown-content">
+          <a href="register-driver.html">As Driver</a>
+          <a href="register-host.html">As Host</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero animate">
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <h1>Park Smarter with <span class="highlight-purple">Smart</span><span class="highlight-yellow">Slot</span></h1>
+    <p>The easiest way to find and reserve parking — or earn by sharing yours.</p>
+
+    <div class="cta-buttons">
+      <a href="driver-register.html" class="btn-pill purple">I'm a Driver</a>
+      <a href="host-register.html" class="btn-pill yellow">I'm a Host</a>
+    </div>
+  </section>
+
+  <section id="how" class="how-it-works animate">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>For Drivers</h3>
+        <p>Search for parking spaces, book them instantly, and park hassle-free.</p>
+      </div>
+      <div class="step animate">
+        <h3>For Hosts</h3>
+        <p>List your unused parking space and start earning — it’s that simple.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="benefits animate">
+    <h2>Why SmartSlot?</h2>
+    <ul>
+      <li>Lower cost than commercial parking</li>
+      <li>Trusted and verified hosts</li>
+      <li>Contactless, real-time reservations</li>
+      <li>Earn passive income easily</li>
+    </ul>
+  </section>
+
+  <section id="join" class="cta animate">
+    <h2>Ready to SmartSlot?</h2>
+    <p>Join our community of drivers and hosts revolutionizing parking.</p>
+    <div class="cta-buttons">
+      <a href="register-driver.html" class="btn-pill purple">Join as Driver</a>
+      <a href="register-host.html" class="btn-pill yellow">Join as Host</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SmartSlot. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
