@@ -198,7 +198,10 @@
 </head>
 <body>
   <header>
-    <div class="logo">SmartSlot</div>
+    <div class="logo">
+      <img src="smartslot-logo.png" alt="SmartSlot Logo" class="logo-img">
+    </div>
+
     <nav>
       <a href="#" onclick="openModal('searchModal')">Search</a>
       <a href="#" onclick="openModal('notifModal')">Notifications</a>
@@ -278,12 +281,12 @@
     <span class="close" onclick="closeModal('searchModal')">&times;</span>
     <h2 style="margin-bottom: 1rem;">Search for Parking</h2>
 
-    <!-- Location input -->
+    <!-- Location Input -->
     <label style="font-weight: 500;">Location</label>
     <input type="text" placeholder="e.g. BGC, Makati, Ortigas..." style="width: 100%; padding: 0.7rem; border-radius: 12px; border: 1px solid #ccc; margin-bottom: 1rem;" />
 
-    <!-- Date and Time -->
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <!-- Filter Dropdowns -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
       <div style="flex: 1;">
         <label style="font-weight: 500;">Date</label>
         <input type="date" style="width: 100%; padding: 0.6rem; border-radius: 12px; border: 1px solid #ccc;" />
@@ -294,23 +297,25 @@
       </div>
     </div>
 
-    <!-- Parking Type -->
-    <div style="margin-top: 1.5rem;">
-      <label style="font-weight: 500;">Parking Type</label><br/>
-      <label><input type="radio" name="parking-type" value="covered" /> Covered</label><br/>
-      <label><input type="radio" name="parking-type" value="open" /> Open</label><br/>
-      <label><input type="radio" name="parking-type" value="any" checked /> Any</label>
+    <div style="margin-bottom: 1rem;">
+      <label style="font-weight: 500;">Parking Type</label>
+      <select style="width: 100%; padding: 0.6rem; border-radius: 12px; border: 1px solid #ccc;">
+        <option value="">Any</option>
+        <option value="covered">Covered</option>
+        <option value="open">Open</option>
+      </select>
     </div>
 
-    <!-- Amenities -->
-    <div style="margin-top: 1.5rem;">
-      <label style="font-weight: 500;">Amenities</label><br/>
-      <label><input type="checkbox" /> EV Charging</label><br/>
-      <label><input type="checkbox" /> Wheelchair Accessible</label>
+    <div style="margin-bottom: 1rem;">
+      <label style="font-weight: 500;">Amenities</label>
+      <select style="width: 100%; padding: 0.6rem; border-radius: 12px; border: 1px solid #ccc;">
+        <option value="">Select Amenities</option>
+        <option value="ev">EV Charging</option>
+        <option value="wheelchair">Wheelchair Accessible</option>
+      </select>
     </div>
 
-    <!-- Price Filter -->
-    <div style="margin-top: 1.5rem;">
+    <div style="margin-bottom: 1.5rem;">
       <label style="font-weight: 500;">Price Range</label>
       <select style="width: 100%; padding: 0.6rem; border-radius: 12px; border: 1px solid #ccc;">
         <option value="">Any</option>
@@ -320,19 +325,23 @@
       </select>
     </div>
 
+    <!-- Static Map -->
+    <div style="margin-top: 2rem;">
+      <label style="font-weight: 500;">Map View</label>
+      <div style="width: 100%; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <iframe
+          width="100%"
+          height="250"
+          frameborder="0"
+          style="border:0"
+          src="https://maps.google.com/maps?q=manila&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
     <!-- Search Button -->
-     <!-- Static Map Embed -->
-<div style="margin-top: 2rem;">
-  <label style="font-weight: 500;">Map View</label>
-  <div style="width: 100%; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <iframe
-      width="100%"
-      height="250"
-      frameborder="0"
-      style="border:0"
-      src="https://maps.google.com/maps?q=manila&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      allowfullscreen
-    ></iframe>
+    <button class="btn-pill purple" style="margin-top: 1.5rem; width: 100%;">Search Now</button>
   </div>
 </div>
 
