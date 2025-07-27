@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #977fb0, #ebc965);
+      background: #977fb0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -197,17 +197,16 @@
   </style>
 </head>
 <body>
-  <header>
+    <header>
     <div class="logo">
-      <img src="smartslot-logo.png" alt="SmartSlot Logo" class="logo-img">
+      <img src="smartslot-logo.png" alt="SmartSlot Logo" style="height: 40px; vertical-align: middle;" />
     </div>
-
     <nav>
-      <a href="#" onclick="openModal('searchModal')">Search</a>
-      <a href="#" onclick="openModal('notifModal')">Notifications</a>
+      <a href="index.html">Home</a>
+      <a href="#" id="notificationBtn">🔔 Notifications</a>
+      <a href="#">Logout</a>
     </nav>
   </header>
-
   <div class="dashboard-container">
     <div class="dashboard-header">
       <h1>Welcome, Driver!</h1>
