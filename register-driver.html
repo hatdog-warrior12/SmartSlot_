@@ -88,6 +88,18 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* dark semi-transparent background */
+}
+
   </style>
 </head>
 <body>
@@ -106,6 +118,11 @@
         <label for="password">Password</label>
         <input type="password" id="password" required />
       </div>
+      <div style="font-size: 0.85rem; margin-bottom: 1rem;">
+        By registering, you agree to our
+        <a href="#" id="termsLink" style="color: #977fb0; font-weight: 600;">Terms and Conditions</a>.
+      </div>
+
       <button class="btn-register">Create Driver Account</button>
     </form>
     <div class="bottom-text">
@@ -114,11 +131,101 @@
     </div>
   </div>
 
+<!-- Driver Terms and Conditions Modal -->
+<div id="driverTermsModal" class="modal" style="display: none;">
+  <div class="modal-content" style="
+    background: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 650px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  ">
+    <span id="closeDriverTermsModal" style="
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;">&times;</span>
+
+    <h2 style="color: #977fb0; margin-bottom: 1rem;">SmartSlot Driver Terms and Conditions</h2>
+
+    <p><strong>Effective Date:</strong> July 27, 2025</p>
+
+    <p>These Terms and Conditions ("Agreement") constitute a legally binding contract between you ("Driver", "You", or "User") and SmartSlot regarding your access to and use of the SmartSlot platform and services as a driver seeking to rent parking spaces ("Services"). By registering an account and/or using the Services, you agree to comply with and be bound by this Agreement.</p>
+
+    <h3>1. Eligibility</h3>
+    <p>You affirm and warrant that you are at least 18 years of age, possess the legal capacity to enter into binding contracts, and hold a valid driver’s license where applicable.</p>
+
+    <h3>2. Account Responsibility</h3>
+    <p>You are solely responsible for maintaining the confidentiality of your account credentials, including your username and password, and for all activities that occur under your account. You agree to notify SmartSlot immediately upon any unauthorized use or security breach.</p>
+
+    <h3>3. Use of Services</h3>
+    <p>You agree to use the SmartSlot platform solely for lawful purposes and in accordance with this Agreement. You shall not engage in any activity that may damage, disable, or impair the functioning of the platform, or interfere with other users’ enjoyment of the Services.</p>
+
+    <h3>4. Payment and Fees</h3>
+    <p>Payments for parking space rentals shall be made through the SmartSlot platform. You agree to pay all applicable fees and charges as disclosed during booking. SmartSlot may apply transaction fees or commissions as detailed in the platform’s fee schedule.</p>
+
+    <h3>5. Conduct and Compliance</h3>
+    <p>You agree to comply with all applicable laws, regulations, and ordinances relating to your use of the Services. You shall respect property rights, follow all posted rules and restrictions for parking spaces, and ensure your vehicle does not cause damage or disruption.</p>
+
+    <h3>6. Liability and Indemnification</h3>
+    <p>SmartSlot disclaims any and all liability for damages, losses, theft, or injuries incurred in connection with the use of rented parking spaces. You agree to indemnify, defend, and hold harmless SmartSlot and its affiliates from any claims arising out of your use of the Services or violation of this Agreement.</p>
+
+    <h3>7. Cancellations and Refunds</h3>
+    <p>Cancellation policies are governed by the terms specified at the time of booking. Refunds, if applicable, will be processed according to the platform’s refund policy.</p>
+
+    <h3>8. Termination</h3>
+    <p>SmartSlot reserves the right to suspend or terminate your account for breach of this Agreement, inappropriate conduct, fraudulent activity, or any conduct detrimental to the platform.</p>
+
+    <h3>9. Modification of Terms</h3>
+    <p>SmartSlot may update or modify these terms at any time without prior notice. Continued use of the Services following such changes constitutes your acceptance of the updated terms.</p>
+
+    <h3>10. Governing Law and Dispute Resolution</h3>
+    <p>This Agreement shall be governed by the laws of the Republic of the Philippines. Any disputes arising shall be subject to the exclusive jurisdiction of the courts of Quezon City, Metro Manila.</p>
+
+    <p>For legal inquiries, please contact <strong>legal.smartslot@gmail.com</strong>.</p>
+
+    <button onclick="document.getElementById('driverTermsModal').style.display='none'" class="btn-register" style="margin-top: 2rem;">Close</button>
+  </div>
+</div>
+  
   <script>
     document.getElementById('driver-register-form').addEventListener('submit', function(e) {
       e.preventDefault();
       window.location.href = 'driver-dashboard.html';
     });
   </script>
+
+  <script>
+  const termsModal = document.getElementById('driverTermsModal');         // correct modal ID
+const termsLink = document.getElementById('termsLink');                 // your link ID
+const closeTermsBtn = document.getElementById('closeDriverTermsModal'); // correct close button ID
+
+termsLink.onclick = function(e) {
+  e.preventDefault();
+  termsModal.style.display = 'block';
+};
+
+closeTermsBtn.onclick = function() {
+  termsModal.style.display = 'none';
+};
+
+window.onclick = function(e) {
+  if (e.target === termsModal) {
+    termsModal.style.display = 'none';
+  }
+};
+
+</script>
+
+
+  
 </body>
 </html>

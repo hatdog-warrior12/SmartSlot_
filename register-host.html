@@ -107,6 +107,11 @@
         <input type="password" id="password" required />
       </div>
       <button class="btn-register">Create Host Account</button>
+      <div style="font-size: 0.85rem; margin-bottom: 1rem;">
+  By registering, you agree to our
+  <a href="#" id="hostTermsLink" style="color: #977fb0; font-weight: 600;">Terms and Conditions</a>.
+</div>
+
     </form>
     <div class="bottom-text">
       Already have a host account?
@@ -114,11 +119,105 @@
     </div>
   </div>
 
+  <!-- Host Terms and Conditions Modal -->
+<div id="hostTermsModal" class="modal" style="display: none;">
+  <div class="modal-content" style="
+    background: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 650px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    ">
+    
+    <span id="closeHostTermsModal" style="
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;">&times;</span>
+
+    <h2 style="color: #977fb0; margin-bottom: 1rem;">SmartSlot Host Terms and Conditions</h2>
+
+    <p><strong>Effective Date:</strong> July 26, 2025</p>
+
+    <p>These Terms and Conditions ("Agreement") govern your use of the SmartSlot platform as a Host ("You" or "Host"). By registering as a Host and listing a parking space, you agree to be bound by the terms of this Agreement.</p>
+
+    <h3>1. Eligibility</h3>
+    <p>By registering as a Host, you affirm that you are at least 18 years old, have the legal capacity to enter into binding contracts, and have legal ownership or authorization to lease the parking space being listed.</p>
+
+    <h3>2. Listings and Accuracy</h3>
+    <p>You are solely responsible for the accuracy of all information provided in your parking space listing, including location, availability, pricing, access instructions, and restrictions. Misrepresentation may result in removal from the platform without prior notice.</p>
+
+    <h3>3. Host Responsibilities</h3>
+    <p>As a Host, you are expected to:</p>
+    <ul>
+      <li>Ensure that your parking space is safe, accessible, and in good condition.</li>
+      <li>Honor the time and date of bookings made by drivers through SmartSlot.</li>
+      <li>Communicate promptly and clearly with guests regarding parking instructions.</li>
+      <li>Maintain cleanliness and avoid any obstruction of the parking area.</li>
+    </ul>
+
+    <h3>4. Fees and Payouts</h3>
+    <p>SmartSlot will collect a commission for each successful booking. Payouts to Hosts will be made via the payment method on file, subject to processing timelines and applicable transaction fees.</p>
+
+    <h3>5. Cancellation and Penalties</h3>
+    <p>Frequent cancellations or unavailability of listed spaces without proper justification may result in suspension or termination of your Host account.</p>
+
+    <h3>6. Liability</h3>
+    <p>SmartSlot is not liable for any damages, losses, thefts, or accidents that may occur on your property. It is your responsibility to secure appropriate insurance coverage and to comply with any local laws or regulations regarding the leasing of property.</p>
+
+    <h3>7. Indemnification</h3>
+    <p>You agree to indemnify and hold harmless SmartSlot, its officers, directors, and affiliates from any claims, damages, liabilities, and expenses arising from your use of the platform or any breach of this Agreement.</p>
+
+    <h3>8. Modifications</h3>
+    <p>SmartSlot reserves the right to amend or update these terms at any time. Continued use of the platform after such changes constitutes acceptance of the updated terms.</p>
+
+    <h3>9. Termination</h3>
+    <p>SmartSlot reserves the right to suspend or terminate your Host account at any time for violations of these terms, inappropriate conduct, fraudulent activity, or for any other reason deemed necessary to protect the integrity of the platform.</p>
+
+    <h3>10. Governing Law</h3>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of the Republic of the Philippines. Any disputes shall be resolved in the appropriate courts of Quezon City, Metro Manila.</p>
+
+    <p>For any legal questions or concerns, you may contact <strong>legal.smartslot@gmail.com</strong>.</p>
+
+    <button onclick="document.getElementById('hostTermsModal').style.display='none'" class="btn-register" style="margin-top: 2rem;">Close</button>
+  </div>
+</div>
+
   <script>
     document.getElementById('host-register-form').addEventListener('submit', function(e) {
       e.preventDefault();
       window.location.href = 'host-dashboard.html';
     });
   </script>
+
+  <script>
+  const hostTermsModal = document.getElementById('hostTermsModal');
+  const hostTermsLink = document.getElementById('hostTermsLink');
+  const closeHostTermsBtn = document.getElementById('closeHostTermsModal');
+
+  hostTermsLink.onclick = function(e) {
+    e.preventDefault();
+    hostTermsModal.style.display = 'block';
+  };
+
+  closeHostTermsBtn.onclick = function() {
+    hostTermsModal.style.display = 'none';
+  };
+
+  window.onclick = function(e) {
+    if (e.target === hostTermsModal) {
+      hostTermsModal.style.display = 'none';
+    }
+  };
+</script>
+
 </body>
 </html>
